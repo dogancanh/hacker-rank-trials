@@ -1,0 +1,35 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the sockMerchant function below.
+def sockMerchant(n, ar):
+    count = []
+    pair = []
+    arr = []
+    # Unique elements list of ar
+    arr = set(ar)
+    new_arr = list(arr)
+    # -----------------
+    for i in range(len(new_arr)):
+        count.append(ar.count(new_arr[i]))
+        if count[i] >= 2:
+            pair.append(int(count[i] / 2))
+
+    return sum(pair)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = sockMerchant(n, ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
