@@ -1,2 +1,2 @@
-# HackerRank Trials
+# HackerRank Solutions 
 
